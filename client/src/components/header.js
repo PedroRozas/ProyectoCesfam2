@@ -1,17 +1,16 @@
 import logo from './assets/logo.png';
+
 export default function header() {
   return (
     <nav
-       className='navbar bg-light mb-4 p-0'>
-        <div className='container'> 
-            <a className= 'navbar-brand' href='/'>
+       className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div className="container-fluid"> 
+            
                 <div className='d-flex'>
-                    <img src={logo} alt='logo' className='mr-2'/>
-                    <div>
-                        Proyecto cesfam
-                    </div>
+                    <img src={logo} alt='logo' className='mr-2' width={50}/>
+                 
                 </div>
-            </a>
+            
         </div>
        </nav>
   )

@@ -5,26 +5,18 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Main from "./components/main";
 import Login from "./components/login";
 import Singup from "./components/singup";
+import Header2 from "./components/header2";
+import Recipes from "./components/recipes/recipes";
+import NewMeds from "./components/newmed/index.jsx";
+import Stock from "./components/stockpage/index";
+
 
 const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql',
   cache: new InMemoryCache()
 });
 
-/*
-function App() {
-  return (
-    <>
-      <ApolloProvider client={client}>
-      <Header />
-      <div className="container">
-        <Users/>
-      </div>
-      </ApolloProvider>
-    </>
-  );
-}
-*/
+
 
 function App() {
   const token = localStorage.getItem("token");
@@ -32,13 +24,14 @@ function App() {
     return (
       <>
         <ApolloProvider client={client}>
-          <Header />
+          <Header2 />
           <Routes>
             {token && <Route path="/" exact element={<Main />} />}
             <Route path="/login" exact element={<Login/>} />
             <Route path="/signup"exact element={<Singup/>} />
             <Route path="/" exact element={<Navigate to="/login" />} />
             <Route path="/home" exact element={<Meds />} />
+            <Route path="/recipes" exact element={<Recipes />} />
           </Routes>
         </ApolloProvider>
       </>
@@ -49,12 +42,15 @@ function App() {
     return (
       <>
         <ApolloProvider client={client}>
-          <Header />
+          <Header2 />
           <Routes>
             <Route path="/login" exact element={<Login/>} />
             <Route path="/signup"exact element={<Singup/>} />
             <Route path="/" exact element={<Navigate to="/login" />} />
             <Route path="/home" exact element={<Navigate to="/login" />} />
+            <Route path="/recipes" exact element={<Recipes />} />
+            <Route path="/newmed" exact element={<NewMeds />} />
+            <Route path="/stock" exact element={<Stock />} />
           </Routes>
         </ApolloProvider>
       </>
@@ -62,4 +58,6 @@ function App() {
   }
  
 }
+
+
 export default App;

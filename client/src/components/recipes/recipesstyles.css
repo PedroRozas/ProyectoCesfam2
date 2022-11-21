@@ -1,0 +1,88 @@
+.recipes_container {
+	width: 100%;
+	min-height: 90vh;
+	background-color: #e1dfdf;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.recipes_form_container {
+	width: 950px;
+	height: 500px;
+	display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: row;
+	border-radius: 10px;
+	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+}
+.left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #446e9b;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.right_form_recipes {
+	flex: 1;
+	display: flex;
+    background-color: #446e9b;
+	flex-direction: column;
+    justify-content: space-around;
+	align-items: center;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.error_msg {
+	width: 370px;
+	padding: 15px;
+	margin: 5px 0;
+	font-size: 14px;
+	background-color: #f34646;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.green_btn {
+	background-color: #1a951e;
+	color: white;
+	margin: 10px;
+    border-radius: 5px;
+}
+
+.input {
+	outline: none;
+	border: none;
+	width: 370px;
+    height: 50px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+}
+.inputObservations {
+	outline: none;
+	border: none;
+	width: 370px;
+    height: 150px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #edf5f3;
+	margin: 5px 0;
+	font-size: 14px;
+}
+
+.form_container {
+	display: flex;
+	flex-direction: row;
+	align-items: space-between;
+    justify-content: space-between;
+}
