@@ -25,14 +25,12 @@ const MedsType = new GraphQLObjectType({
     fields: () => ({
         id: {type: GraphQLID},
         codigo: {type: GraphQLInt},
-        descp: {type: GraphQLString},
+        nombre: {type: GraphQLString},
         fabricante: {type: GraphQLString},
         tipo: {type: GraphQLString},
-        componentes: {type: GraphQLString},
-        contenido: {type: GraphQLString},
         cantidad: {type: GraphQLInt},
-        gramaje: {type: GraphQLString},
-        formato: {type: GraphQLString},
+        dosis: {type: GraphQLString},
+        bioequivalente: {type: GraphQLString},
         
     })
 });
@@ -116,26 +114,24 @@ const mutation = new GraphQLObjectType({
             type: MedsType,
             args: {
                 codigo: {type: new GraphQLNonNull(GraphQLInt)},
-                descp: {type: new GraphQLNonNull(GraphQLString)},
+                nombre: {type: new GraphQLNonNull(GraphQLString)},
                 fabricante: {type: new GraphQLNonNull(GraphQLString)},
                 tipo: {type: new GraphQLNonNull(GraphQLString)},
-                componentes: {type: new GraphQLNonNull(GraphQLString)},
-                contenido: {type: new GraphQLNonNull(GraphQLString)},
                 cantidad: {type: new GraphQLNonNull(GraphQLInt)},
-                gramaje: {type: new GraphQLNonNull(GraphQLString)},
-                formato: {type: new GraphQLNonNull(GraphQLString)}
+                dosis: {type: new GraphQLNonNull(GraphQLString)},
+                bioequivalente: {type: new GraphQLNonNull(GraphQLString)}
             },
             resolve(parent, args) {
                 const med = new Meds({
                     codigo: args.codigo,
-                    descp: args.descp,
+                    nombre: args.nombre,
                     fabricante: args.fabricante,
                     tipo: args.tipo,
-                    componentes: args.componentes,
-                    contenido: args.contenido,
                     cantidad: args.cantidad,
-                    gramaje: args.gramaje,
-                    formato: args.formato
+                    dosis: args.dosis,
+                    bioequivalente: args.bioequivalente
+
+                  
                 });
     
                 return med.save();
@@ -156,29 +152,25 @@ const mutation = new GraphQLObjectType({
             type: MedsType,
             args: {
                 id: {type: new GraphQLNonNull(GraphQLID)},
-                codigo: {type: GraphQLInt},
-                descp: {type: GraphQLString},
-                fabricante: {type: GraphQLString},
-                tipo: {type: GraphQLString},
-                componentes: {type: GraphQLString},
-                contenido: {type: GraphQLString},
+                codigo: {type: new GraphQLNonNull(GraphQLInt)},
+                nombre: {type: new GraphQLNonNull(GraphQLString)},
+                fabricante: {type: new GraphQLNonNull(GraphQLString)},
+                tipo: {type: new GraphQLNonNull(GraphQLString)},
                 cantidad: {type: new GraphQLNonNull(GraphQLInt)},
-                gramaje: {type: GraphQLString},
-                formato: {type: GraphQLString}
+                dosis: {type: new GraphQLNonNull(GraphQLString)},
+                bioequivalente: {type: new GraphQLNonNull(GraphQLString)}
             },
             resolve(parent, args) {
                 return Meds.findByIdAndUpdate(args.id, 
                     {
                         $set: {
                             codigo: args.codigo,
-                            descp: args.descp,
+                            nombre: args.nombre,
                             fabricante: args.fabricante,
                             tipo: args.tipo,
-                            componentes: args.componentes,
-                            contenido: args.contenido,
                             cantidad: args.cantidad,
-                            gramaje: args.gramaje,
-                            formato: args.formato
+                            dosis: args.dosis,
+                            bioequivalente: args.bioequivalente
                         },
                     }, 
                     {new: true}
