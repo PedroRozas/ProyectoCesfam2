@@ -50,11 +50,17 @@
 	text-align: center;
 }
 
-.green_btn {
+.recipe_btn {
 	background-color: #1a951e;
 	color: white;
-	margin: 10px;
-    border-radius: 5px;
+	border: none;
+	outline: none;
+	padding: 12px 0;
+	border-radius: 20px;
+	width: 180px;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
 }
 
 .input {
