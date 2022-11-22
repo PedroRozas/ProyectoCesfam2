@@ -86,7 +86,7 @@ function NewMeds() {
               className="input"
             />
             {error && <div className="error_msg">error</div>}
-            <button type="submit" className="green_btn">
+            <button type="submit" className="meds_btn">
               Ingresar
             </button>
             </div>

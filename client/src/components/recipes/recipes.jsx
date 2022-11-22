@@ -97,7 +97,7 @@ function Recipes() {
               className="inputObservations"
             />
             {error && <div className="error_msg">error</div>}
-            <button type="submit" className="green_btn">
+            <button type="submit" className="recipe_btn">
               Generar receta
             </button>
           </div>
