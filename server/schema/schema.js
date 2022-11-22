@@ -1,4 +1,3 @@
-const {projects, clients} = require('../sample.js');
 const {GraphQLObjectType, GraphQLID, GraphQLString, GraphQLSchema, GraphQLList, GraphQLInt, GraphQLNonNull} = require('graphql')
 
 //moongoose models
